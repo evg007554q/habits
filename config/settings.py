@@ -180,3 +180,7 @@ REST_FRAMEWORK = \
 
 CELERY_BROKER_URL = 'redis://localhost:6379'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+
+
+BOT_TG_TOKEN = os.getenv('BOT_TG_TOKEN')
+USER_TG_ID = os.getenv('USER_TG_ID')
