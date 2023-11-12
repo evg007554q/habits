@@ -1,9 +1,9 @@
 
 from datetime import datetime, timedelta, timezone
 
-import requests
-
 from dateutil.relativedelta import relativedelta
+
+import requests
 
 from apphabits.models import habits
 from config import settings
@@ -13,8 +13,6 @@ from config import settings
 
 def app_send_message_tg(message_habits):
     """отправка сообщения """
-
-
     if message_habits.nice_habit:
         textm = f"А потом приятная привычка - {message_habits.action} в {message_habits.place}"
     else:
@@ -66,7 +64,7 @@ def app_send_message_schedule():
                 # каждый месяц
                 # Сдвиг на месяц
                 dt_send = (item_ms.habits_time + relativedelta(months=1))
-                           # )
+
 
             # print(dt_send)
             item_ms.habits_time = dt_send
