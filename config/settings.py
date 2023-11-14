@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'apphabits',
     'users',
     'rest_framework_simplejwt',
+    'corsheaders',
     'drf_yasg',
 ]
 
@@ -57,6 +58,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+
+
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -184,3 +188,12 @@ CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 
 BOT_TG_TOKEN = os.getenv('BOT_TG_TOKEN')
 USER_TG_ID = os.getenv('USER_TG_ID')
+
+# CORS
+CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:8000',
+]
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:8000',
+]
