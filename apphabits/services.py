@@ -1,4 +1,4 @@
-
+from celery import shared_task
 from datetime import datetime, timedelta, timezone
 
 from dateutil.relativedelta import relativedelta
