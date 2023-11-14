@@ -32,3 +32,15 @@ class habitsDestroyAPIView(generics.DestroyAPIView):
     queryset = habits.objects.all()
     permission_classes = [IsOwner]
 
+
+class habit_cartAPIView(generics.RetrieveAPIView):
+    serializer_class = habitsSerializers
+    queryset = habits.objects.all()
+    permission_classes = [IsOwner]
+
+class habit_updateAPIView(generics.UpdateAPIView):
+    serializer_class = habitsSerializers
+    queryset = habits.objects.all()
+
+    permission_classes = [IsOwner]
+
