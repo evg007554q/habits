@@ -4,9 +4,7 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 from users.apps import UsersConfig
-from users.views import (LoginView, LogoutView, RegisterView, UserUpdateView, generate_new_password, check_email
-)
-
+from users.views import UsersCreateAPIView
 
 app_name = UsersConfig.name
 # login/
