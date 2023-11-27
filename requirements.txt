@@ -45,5 +45,5 @@ python-dateutil~=2.8.2
 drf_yasg
 django-cors-headers
 celery
-redis-5.0.1
+redis
 django-celery-beat

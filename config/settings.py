@@ -91,10 +91,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': 'localhost',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'mysecreretpassword',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
@@ -183,9 +183,8 @@ REST_FRAMEWORK = \
     }
 
 
-CELERY_BROKER_URL = 'redis://localhost:6379'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379'
-
+CELERY_BROKER_URL = 'redis://redis:6379/0'
+# CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 
 BOT_TG_TOKEN = os.getenv('BOT_TG_TOKEN')
 USER_TG_ID = os.getenv('USER_TG_ID')
